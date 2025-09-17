@@ -1,17 +1,4 @@
-/*
-🔹 Fundamentals & Strings
-
-
-
-
-
-
-Abbreviation Maker
-Input: "Java Script Object Notation" → Output: "JSON"
-
-Hide Phone Number
-Input: "9876543210" → Output: "*****43210"
-*/
+// 1. Fundamentals & Strings
 
 /* Palindrome Checker
 Write a function that checks if a string is the same forwards and backwards.
@@ -29,3 +16,38 @@ function stringFrontAndBack(str) {
 }
 console.log(stringFrontAndBack("hello"));
 console.log(stringFrontAndBack("madam"));
+
+/*
+Count Vowels
+Write a function that counts how many vowels are in a string.
+
+Input: "hello" → Output: 2
+*/
+
+function countVowels(string) {
+  const vowels = [];
+  for (let i = 0; i < string.length; i++) {
+    if (
+      string[i] === "a" ||
+      string[i] === "e" ||
+      string[i] === "i" ||
+      string[i] === "o" ||
+      string[i] === "u"
+    ) {
+      vowels.push(string[i]);
+    }
+  }
+  return `Vowels in ${string}: ${vowels.length}`;
+}
+console.log(countVowels("hello"));
+console.log(countVowels("saad hussain"));
+
+/*
+Abbreviation Maker
+Input: "Java Script Object Notation" → Output: "JSON"
+*/
+
+/*
+Hide Phone Number
+Input: "9876543210" → Output: "*****43210"
+*/
