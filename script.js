@@ -68,3 +68,60 @@ function hideNumber(number) {
 }
 hideNumber(9876543210);
 hideNumber(1234543210);
+
+// Write a program to swap two numbers without using a third variable.
+
+function swap(a, b) {
+  [a, b] = [b, a];
+  return `a: ${a}, b: ${b}`;
+}
+
+console.log(swap(5, 2));
+
+// Print the multiplication table of any number (1 to 10).
+
+function printTable(number) {
+  for (let i = 1; i <= 10; i++) {
+    console.log(`${number} * ${i} = ${number * i}`);
+  }
+}
+printTable(5);
+
+// Write a program to reverse a number (e.g., 123 → 321)
+
+function reverseNumber(number) {
+  const str = String(number);
+  const revNumbers = [];
+  for (let i = str.length - 1; i >= 0; i--) {
+    revNumbers.push(str[i]);
+  }
+  return revNumbers.join("");
+}
+
+console.log(reverseNumber(123));
+console.log(reverseNumber(56987));
+
+// Count how many times a character occurs in a string
+
+function countCharacter(str, character) {
+  const strArr = [];
+  for (const letter of str.split("")) {
+    if (letter === character) {
+      strArr.push(letter);
+    }
+  }
+  return `"${str}" -> ${character}: ${strArr.length}`;
+}
+console.log(countCharacter("banana", "a"));
+
+// Convert "hello world" into "Hello World"
+
+function capitalizeEachWord(str) {
+  const wordsArr = [];
+  for (const word of str.split(" ")) {
+    wordsArr.push(word[0].toUpperCase() + word.slice(1));
+  }
+  return wordsArr.join(" ");
+}
+
+console.log(capitalizeEachWord("hello world"));
