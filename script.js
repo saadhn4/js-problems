@@ -246,3 +246,26 @@ printKeysAndValues({
   english: 85,
   science: 97,
 });
+
+// Print all numbers from 1–100 but skip multiples of 3.
+
+for (let i = 1; i <= 100; i++) {
+  if (i % 3 === 0) continue;
+  console.log(i);
+}
+
+// Write FizzBuzz: - Multiples of 3 → "Fizz" - Multiples of 5 → "Buzz" - Multiples of both → "FizzBuzz"
+
+for (let i = 1; i <= 100; i++) {
+  if (i % 3 === 0 && i % 5 === 0) {
+    console.log("FizzBuzz");
+  } else if (i % 3 === 0) {
+    console.log("Fizz");
+  } else if (i % 5 === 0) {
+    console.log("Buzz");
+  } else {
+    console.log(i);
+  }
+}
+
+//  Find the sum of digits of a number (e.g., 456 → 15)
