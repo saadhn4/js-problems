@@ -269,3 +269,84 @@ for (let i = 1; i <= 100; i++) {
 }
 
 //  Find the sum of digits of a number (e.g., 456 → 15)
+
+function sumOfDigits(number) {
+  // Declaring n outside cause to use split i need to convert it into a string
+  let n = String(number);
+  const numbers = [];
+  // n.split = [4,5,6] (works because n is now a string)
+  for (n of n.split("")) {
+    numbers.push(n);
+  }
+  let sum = 0;
+  for (const number of numbers) {
+    // converting back to number because you dont want to add a number with a string(We dont want 0+'4')
+    sum += Number(number);
+  }
+  return sum;
+}
+console.log(sumOfDigits(456));
+
+// Write a function to check if the given property exists in an object
+
+function checkIfPropertyExists(obj, property) {
+  return obj.hasOwnProperty(property)
+    ? "Yes, property exists"
+    : "No, property does not exist";
+}
+
+console.log(
+  checkIfPropertyExists({ name: "Saad", age: 20, isAlive: true }, "isAlive")
+);
+
+// Write a function that returns the larger of two numbers.
+
+function returnLargerNumber(a, b) {
+  return a > b ? a : b;
+}
+
+console.log(returnLargerNumber(51, 22));
+
+// Write a function that takes an array and returns its average.
+
+function getAverage(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  return sum / arr.length;
+}
+
+console.log(getAverage([1, 2, 3, 4, 5]));
+
+// Write a function that takes a string and returns it reversed.
+
+function reverseString(str) {
+  // const strArray = [];
+  // for (let i = str.length - 1; i >= 0; i--) {
+  //   strArray.push(str[i]);
+  // }
+  // return strArray.join("");
+  return str.split("").reverse().join("");
+}
+
+console.log(reverseString("hello"));
+
+// Write a function that counts how many times a word appears in a sentence
+
+function countWordAppearance(str, word) {
+  let count = 0;
+  for (const w of str
+    .trim()
+    .replace(/[.,?!\[\]]/g, "")
+    .split(" ")) {
+    if (w === word) count++;
+  }
+
+  console.log(`The word ${word} appears in the given string ${count} times`);
+}
+
+countWordAppearance(
+  "The river flowed calmly through the valley, and children played near the river, skipping stones across its clear surface while the sun reflected brightly on the water.",
+  "river"
+);
