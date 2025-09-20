@@ -125,3 +125,61 @@ function capitalizeEachWord(str) {
 }
 
 console.log(capitalizeEachWord("hello world"));
+
+/*
+Find the maximum and minimum in an array without using built-in methods
+*/
+
+function findMaxAndMin(arr) {
+  let max = arr[0];
+  let min = arr[0];
+  for (const item of arr) {
+    if (item > max) {
+      max = item;
+    }
+    if (item < min) {
+      min = item;
+    }
+  }
+  return `Max: ${max}, Min: ${min}`;
+}
+
+console.log(findMaxAndMin([1, 3, 5, 8, 6]));
+
+// Reverse an array without .reverse().
+
+function reverseArr(arr) {
+  const reversedArr = [];
+  for (let i = arr.length - 1; i >= 0; i--) {
+    reversedArr.push(arr[i]);
+  }
+  return reversedArr;
+}
+
+console.log(reverseArr([1, 2, 3]));
+
+// Count how many even and odd numbers are in an array.
+
+function countOddAndEven(arr) {
+  const oddNumbers = [];
+  const evenNumbers = [];
+
+  for (const item of arr) {
+    if (item % 2 === 0) {
+      evenNumbers.push(item);
+    } else {
+      oddNumbers.push(item);
+    }
+  }
+  return `Odd numbers: ${oddNumbers.length} Even numbers: ${evenNumbers.length}`;
+}
+console.log(countOddAndEven([1, 2, 3, 4, 5, 6]));
+
+// Merge two arrays into one (no .concat())
+
+function mergeArrays(arr1, arr2) {
+  const mergedArr = [...arr1, ...arr2];
+  return mergedArr;
+}
+
+console.log(mergeArrays([1, 2, 3], [4, 5, 6]));
