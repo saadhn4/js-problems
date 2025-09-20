@@ -183,3 +183,66 @@ function mergeArrays(arr1, arr2) {
 }
 
 console.log(mergeArrays([1, 2, 3], [4, 5, 6]));
+
+//  Create an object for a student with name, age, marks and print them in a sentence
+
+const student = {
+  name: "Saad Hussain",
+  age: 21,
+  marks: 67,
+};
+
+console.log(
+  `Name: ${student.name}, Age: ${student.age}, Marks: ${student.marks}`
+);
+
+//  Count how many properties an object has.
+
+function countObjectKeys(obj) {
+  console.log(Object.keys(obj).length);
+}
+countObjectKeys(student);
+
+//  Find the property with the highest value in: { math: 92, english: 85, science: 97 }
+
+function findHighestMarks(obj) {
+  const marksArr = [];
+  for (const key in obj) {
+    marksArr.push(obj[key]);
+  }
+  return `Highest Marks: ${Math.max(...marksArr)}`;
+}
+
+console.log(
+  findHighestMarks({
+    math: 92,
+    english: 85,
+    science: 97,
+  })
+);
+
+// Write a method inside an object that calculates BMI and stores it.
+
+const person = {
+  heightInMeters: 1.79,
+  weightInKg: 76,
+  findBmi() {
+    return this.weightInKg / this.heightInMeters ** 2;
+  },
+};
+
+console.log(person.findBmi());
+
+// Loop through an object and print all keys and values.
+
+function printKeysAndValues(obj) {
+  for (const key in obj) {
+    console.log(`${key}: ${obj[key]}`);
+  }
+}
+
+printKeysAndValues({
+  math: 92,
+  english: 85,
+  science: 97,
+});
